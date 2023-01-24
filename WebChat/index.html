@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>WebChat</title>
+        <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+		<script type="text/javascript" src="code.js"></script>
+    </head>
+    <body>
+        <section id="login" class="login"> 
+            <h1>Welcome! &#128075;</h1>
+            <input id="input-name" type="text" class="input-login" placeholder="User Name">
+            <input id="input-room" type="text" class="input-login" placeholder="Room Name: (DEFAULT ROOM: JarJarBinks_ClubDeFans)">
+            <div id="input-photo">
+                <img class="profile-picture" src="img/perfil.png">
+                <img class="profile-picture" src="img/acne.png">
+                <img class="profile-picture" src="img/avatar.png">
+                <img class="profile-picture" src="img/agent.png">
+                <img class="profile-picture" src="img/perfil2.png">
+                <img class="profile-picture" src="img/user.png">
+            </div>
+            <button id="b-login" class="b-login">Login</button>
+        </section>
+
+        <div id="main" class="container">
+            <div id="user-bar" class="bar">
+                <div class="contenedor">
+                    <div id="user-photo">
+                        <!-- <img id="user-image" class="image" src="img/perfil.png"/> -->
+                    </div>
+    
+                    <div class="description">
+                        <p id="user-description">@antonio25xd</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="message-history">
+                
+            </div>
+            
+            <div id="message-bar" class="bar"> <!--The bar with the receiver information + config-->
+
+                <div id="receiver-photo">
+                    <img id="receiver-image" class="image" src="img/jarjar.png" />
+                </div>
+
+                <div id="room-name">
+                    <p id="room-name">Username</p> 
+                </div>
+
+                <div id="config">
+                    <img id="config-icon" class="icons" src="img/settings-outline.svg" />
+                </div>
+            </div>  
+           
+            <div id ="chat-zone"> <!--Where messages will appear--></div>
+
+            <div class ="user-input">
+                <input id="user-message" class="user-message" type="text" placeholder="Write a message here">
+                <button id="send-message"><img src="img/send-message.png" width="20px" height="20px"> </button>
+            </div>
+
+            
+                
+        </div>
+        <script src="sillyclient.js"></script>
+        <script>MYAPP.init();</script>
+    </body>
+</html>
