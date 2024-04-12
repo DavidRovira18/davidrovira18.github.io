@@ -13,7 +13,6 @@ export default class ChunkSystem{
 
         this.chunks = {};
         this.currentChunk = undefined;
-        this.visitedChunks = [];
 
         //Init noise function
         this.noise = createNoise2D();
@@ -29,14 +28,14 @@ export default class ChunkSystem{
         for(let i = key[0]-1; i<=key[0]+1; ++i)
             for(let j = key[1]-1; j<=key[1]+1; ++j)
             {
-                const chunk = new Chunk(this.chunkSize, this.noise, new THREE.Vector3(i * this.chunkSize + this.chunkSize/2, 0, j * this.chunkSize + this.chunkSize/2), this.params);
                 const index = `${i}_${j}`;
+                if(this.chunks[index])
+                    continue;
+                
+                const chunk = new Chunk(this.chunkSize, this.noise, new THREE.Vector3(i * this.chunkSize + this.chunkSize/2, 0, j * this.chunkSize + this.chunkSize/2), this.params);
                 this.chunks[index] = chunk;
                 this.scene.add(chunk);
                 this.currentChunk = index;
-                //Only add chunk to visited ones if not visited already
-                if (!this.visitedChunks.includes(index))
-                    this.visitedChunks.push(index);
             }
     }
 
@@ -66,7 +65,7 @@ export default class ChunkSystem{
         if(key===this.currentChunk)
             return true;
 
-        if(this.visitedChunks.includes(key))
+        if(this.chunks[key])
             return true;
 
         return false;
