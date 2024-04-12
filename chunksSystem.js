@@ -24,16 +24,20 @@ export default class ChunkSystem{
     initChunk()
     {
         var key = this.chunkKeyFromPos(this.camera.position);
-        const chunk = new Chunk(this.chunkSize, this.noise, new THREE.Vector3(key[0] * this.chunkSize + this.chunkSize/2, 0, key[1] * this.chunkSize + this.chunkSize/2), this.params);
-        key = key.join('_')
-        this.chunks[key] = chunk;
-        this.scene.add(chunk);
-        this.currentChunk = key;
 
-        //Only add chunk to visited ones if not visited already
-        if (!this.visitedChunks.includes(key))
-            this.visitedChunks.push(key);
-        
+        //Generate central chunk and bounding
+        for(let i = key[0]-1; i<=key[0]+1; ++i)
+            for(let j = key[1]-1; j<=key[1]+1; ++j)
+            {
+                const chunk = new Chunk(this.chunkSize, this.noise, new THREE.Vector3(i * this.chunkSize + this.chunkSize/2, 0, j * this.chunkSize + this.chunkSize/2), this.params);
+                const index = `${i}_${j}`;
+                this.chunks[index] = chunk;
+                this.scene.add(chunk);
+                this.currentChunk = index;
+                //Only add chunk to visited ones if not visited already
+                if (!this.visitedChunks.includes(index))
+                    this.visitedChunks.push(index);
+            }
     }
 
     chunkKeyFromPos(position)
