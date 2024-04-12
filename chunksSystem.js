@@ -31,7 +31,7 @@ export default class ChunkSystem{
                 const index = `${i}_${j}`;
                 if(this.chunks[index])
                     continue;
-                
+
                 const chunk = new Chunk(this.chunkSize, this.noise, new THREE.Vector3(i * this.chunkSize + this.chunkSize/2, 0, j * this.chunkSize + this.chunkSize/2), this.params);
                 this.chunks[index] = chunk;
                 this.scene.add(chunk);
