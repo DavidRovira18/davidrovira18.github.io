@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { FlyControls } from 'three/addons/controls/FlyControls.js';
 import ChunkSystem from './chunksSystem.js';
 
 var BACKGROUND = {
@@ -39,9 +40,20 @@ var BACKGROUND = {
 
 
         // Set up orbit controls
-        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-        this.controls.enableDamping = true;
-        this.controls.enableZoom = true;
+        // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        // this.controls.enableDamping = true;
+        // this.controls.enableZoom = true;
+
+        //Set up fly controls
+        this.controls = new FlyControls(this.camera, this.renderer.domElement);
+        this.controls.movementSpeed = 10;
+        this.controls.rollSpeed = 2;
+        this.controls.dragToLook = false;
+        this.controls.moveUp = false;
+        this.controls.moveDown = false;
+
+        //Set clock
+        this.clock = new THREE.Clock();
 
         return new Promise((resolve) => {
             resolve();
@@ -50,9 +62,12 @@ var BACKGROUND = {
 
     animate: function()
     {
+        const dt = this.clock.getDelta();
 
         //this.camera.position.y += 0.005;
         this.chunkSystem.updateChunks();
+
+        this.controls.update(dt);
         // Render the scene
         this.renderer.render(this.scene, this.camera);
 
