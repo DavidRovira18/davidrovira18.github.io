@@ -1,11 +1,13 @@
 import {Mesh, MeshNormalMaterial, MeshStandardMaterial, PlaneGeometry} from 'three';
 
-const material = new MeshNormalMaterial({ wireframe: true }
+const material = new MeshStandardMaterial({ wireframe: true, color:'green' }
 )
 export default class Chunk extends Mesh {
-    constructor(size, noise, position, params) 
+    constructor(size, noise, position, params, LOD = 5) 
     {
-        const geometry = new PlaneGeometry(size, size, 20, 20);
+        var segments_LOD = Math.floor(size * 0.5 ** LOD);
+        segments_LOD = segments_LOD < 1 ? 1 : segments_LOD;
+        const geometry = new PlaneGeometry(size, size, segments_LOD, segments_LOD);
         geometry.rotateX(-Math.PI * 0.5);
 
         super(geometry, material);
@@ -16,6 +18,8 @@ export default class Chunk extends Mesh {
 
         this.params = params;
 
+        this.LOD = LOD;
+        
         this.updateGeometry();
     }
 
