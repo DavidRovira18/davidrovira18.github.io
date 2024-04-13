@@ -1,3 +1,15 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
 
 canvas {
     display: block;
@@ -10,13 +22,75 @@ canvas {
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 90%;
+    margin: 5vh auto;
     padding: 50px 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    background-color: rgba(24, 25, 25, 0.8);
+    backdrop-filter: blur(10px); /* Desenfoque para simular el efecto de vidrio */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
     position: relative; /* Para que el contenido no se solape con el canvas */
     z-index: 1; /* Asegura que el contenido esté sobre el canvas */
+    color: #ffffff; /* Cambio del color de texto a blanco */
+}
+
+header {
+    margin-bottom: 40px; /* Eliminado el text-align: center; ya que se hereda de .container */
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Cambio del color de texto a blanco */
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center; /* Alineación del texto al centro */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #bbb; /* Cambio del color de texto a un tono más claro */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* Cambio del color de texto a blanco al hacer hover */
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffffff; /* Cambio del color de texto a blanco */
+}
+
+p {
+    line-height: 1.6;
+    color: #dddddd; /* Cambio del color de texto a un tono más claro */
+}
+
+/* Contact section */
+.contact-info {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #dddddd; /* Cambio del color de texto a un tono más claro */
+}
+
+.contact-info a {
+    color: #007bff;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
 }
