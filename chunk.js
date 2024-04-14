@@ -52,4 +52,9 @@ export default class Chunk extends Mesh {
         this.geometry.computeVertexNormals();
         vertex_positions.needsUpdate = true;
     }
+
+    updateLOD()
+    {
+        
+    }
 }

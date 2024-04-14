@@ -25,13 +25,13 @@
         <!-- Header -->
         <header>
             <h1>David Rovira</h1>
-            <nav>
+            <!-- <nav>
                 <ul>
                     <li><a href="#about-me">About Me</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
+            </nav> -->
         </header>
         
         <!-- About Me -->
@@ -65,8 +65,12 @@
         <!-- Projects -->
         <section id="projects">
             <h2>Projects</h2>
-            <div class="project-card">
-              <h3>3D Video Game Development</h3>
+            <ul class="projects">
+                <li class="project-list" data-target="videogame">3D Video Game Development</li>
+                <li class="project-list" data-target="chats">Synchronized Chats</li>
+                <li class="project-list" data-target="raycaster">2D Web RayCaster</li>
+            </ul>
+            <div class="hidden project-card" id="videogame">
               <p>Designed and developed 3D video game from scratch.</p>
               <p><b>this&DAT</b> is a scape room game with terror ambiance where you will have to try to scape the house (if that is possible :S).</p>
               <ul class="technologies">
@@ -82,8 +86,7 @@
               <a href="https://youtu.be/uvPIkp4_FVA" class="view-demo-btn"><i class="fab fa-youtube"></i> Gameplay Demo</a>
               <a href="https://github.com/DavidRovira18/this-DAT-Scape-Room-Game"><i class="fab fa-github"></i>Try game! (And source code)</a>
             </div>  
-            <div class="project-card">
-                <h3>Synchronized Chats</h3>
+            <div class="hidden project-card" id="chats">
                 <p>Designed and developed several synchronized chats, handling both the front-end user interface and back-end server logic.</p>
                 <h4>Simple Chat</h4>
                 <ul class="technologies">
@@ -117,8 +120,7 @@
                 </ul>
                 <a href="https://www.youtube.com/watch?v=hypFcUF_JwY&ab_channel=AinhoaPach%C3%B3n"><i class="fab fa-youtube"></i>Demo</a>
               </div>  
-            <div class="project-card">
-                <h3>2D Web Based RayCaster</h3>
+            <div class="hidden project-card" id="raycaster">
                 <p>Designed and developed a 2D RayCaster.</p>
                 <ul class="technologies">
                     <li>JavaScript</li>
@@ -150,10 +152,15 @@
             <p>Don't hesitate to connect with me via LinkedIn: <a href="https://www.linkedin.com/in/davidrovira18/" target="_blank"><i class="fab fa-linkedin" style="margin-right: 10px;"></i>Connect with me :)</a></p>
         </section>
     </div>
-    <script type="module" src="https://davidrovira18.github.io/simplex-noise.js"></script>
+    <!-- <script type="module" src="https://davidrovira18.github.io/simplex-noise.js"></script>
     <script type="module" src="https://davidrovira18.github.io/chunk.js"></script>
     <script type="module" src="https://davidrovira18.github.io/chunksSystem.js"></script>
     <script type="module" src="https://davidrovira18.github.io/background.js"></script>
-    <script type="module" src="https://davidrovira18.github.io/main.js"></script>
+    <script type="module" src="https://davidrovira18.github.io/main.js"></script> -->
+    <script type="module" src="/simplex-noise.js"></script>
+    <script type="module" src="/chunk.js"></script>
+    <script type="module" src="/chunksSystem.js"></script>
+    <script type="module" src="/background.js"></script>
+    <script type="module" src="/main.js"></script>
 </body>
 </html>

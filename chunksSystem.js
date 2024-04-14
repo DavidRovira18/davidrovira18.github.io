@@ -19,32 +19,16 @@ export default class ChunkSystem{
         //Init noise function
         this.noise = createNoise2D();
 
-        this.initChunk();
+        this.updateChunks();
     }
 
-    initChunk()
+    createChunk(i, j, LOD)
     {
-        var key = this.chunkKeyFromPos(this.camera.position);
-
-        //Generate central chunk and bounding
-        for(let i = key[0]-4; i<=key[0]+4; ++i)
-            for(let j = key[1]-4; j<=key[1]+4; ++j)
-            {
-                const index = `${i}_${j}`;
-
-                const LOD = Math.floor(vec2.set(i - key[0], j - key[1]).length() * 0.5); //Distance between chunks
-                if(this.chunks[index])
-                    continue;
-
-                else
-                {
-                    const chunk = new Chunk(this.chunkSize, this.noise, new THREE.Vector3(i * this.chunkSize + this.chunkSize/2, 0, j * this.chunkSize + this.chunkSize/2), this.params, LOD);
-                    this.chunks[index] = chunk;
-                    this.scene.add(chunk);
-                    this.currentChunk = index;
-                }
-                
-            }
+        const chunk = new Chunk(this.chunkSize, this.noise, new THREE.Vector3(i * this.chunkSize + this.chunkSize/2, 0, j * this.chunkSize + this.chunkSize/2), this.params, LOD);
+        const index = `${i}_${j}`
+        this.chunks[index] = chunk;
+        this.scene.add(chunk);
+        this.currentChunk = index;
     }
 
     chunkKeyFromPos(position)
@@ -60,11 +44,24 @@ export default class ChunkSystem{
     {
         // if (this.cameraInVisitedChunk())
         //     return;
-        if (this.cameraInVisitedChunk())
-            return;
+        var [x,y] = this.chunkKeyFromPos(this.camera.position);
 
-        //Create new chunk
-        this.initChunk();
+         //Generate central chunk and bounding
+         for(let i = x-4; i<=x+4; ++i)
+         for(let j = y-4; j<=y+4; ++j)
+         {
+             const index = `${i}_${j}`;
+
+             const LOD = Math.floor(vec2.set(i - x, j - y).length() * 0.5); //Distance between chunks
+             if(this.chunks[index])
+                 continue;
+
+             else
+             {
+                this.createChunk(i,j, LOD);
+             }
+             
+         }
     }
 
     cameraInVisitedChunk() //Check if camera in visited chunk
