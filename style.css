@@ -263,6 +263,16 @@ p {
     background-color: #0056b3;
 }
 
+.toggle-form{
+    cursor: pointer; /* Add cursor pointer on hover */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+
+.toggle-form:hover {
+    color: var(--accent-color); /* Change text color on hover */
+}
+
 .hidden{
     display: none;
 }

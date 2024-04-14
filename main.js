@@ -7,6 +7,7 @@ BACKGROUND.init().then(() =>{
 document.addEventListener('DOMContentLoaded', function() {
     const projectList = document.querySelectorAll('.project-list');
     const projectCards = document.querySelectorAll('.project-card');
+    const toggleForm = document.querySelector(".toggle-form");
 
     projectList.forEach(project => {
         project.addEventListener('click', function(event) {
@@ -37,5 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
 
         });
+    });
+
+    toggleForm.addEventListener('click', function(event)
+    {
+        const contactForm = document.getElementById("contact-form");
+        contactForm.classList.remove("hidden");
+        toggleForm.remove();
     });
 });
