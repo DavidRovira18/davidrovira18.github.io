@@ -9,7 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
-    font-size: 16px; /* Tamaño de fuente base */
+    font-size: 16px; 
 }
 
 canvas {
@@ -19,36 +19,36 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Para colocar el canvas detrás de los demás elementos */
+    z-index: -1; 
 }
 
 .container {
     max-width: 90%;
     margin: 5vh auto;
-    padding: 30px 20px; /* Reducido el padding para dar más espacio al contenido */
+    padding: 30px 20px; 
     text-align: center;
     background-color: rgba(24, 25, 25, 0.8);
-    backdrop-filter: blur(10px); /* Desenfoque para simular el efecto de vidrio */
+    backdrop-filter: blur(10px); 
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    position: relative; /* Para que el contenido no se solape con el canvas */
-    z-index: 1; /* Asegura que el contenido esté sobre el canvas */
-    color: #ffffff; /* Cambio del color de texto a blanco */
-    font-family: 'Roboto Mono', monospace; /* Cambio de la fuente a Roboto Mono */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    z-index: 1; 
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
 }
 
 header {
-    margin-bottom: 30px; /* Reducido el margen inferior del encabezado */
+    margin-bottom: 30px; 
 }
 
 h1 {
-    font-size: 2.8rem; /* Aumentado el tamaño de fuente para el encabezado principal */
-    margin-bottom: 20px; /* Reducido el margen inferior del encabezado principal */
+    font-size: 2.8rem; 
+    margin-bottom: 20px;
 }
 
 nav ul {
     list-style-type: none;
-    text-align: center; /* Alineación del texto al centro */
+    text-align: center; 
 }
 
 nav ul li {
@@ -58,13 +58,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #bbb; /* Cambio del color de texto a un tono más claro */
+    color: #bbb; 
     font-weight: bold;
-    font-size: 1.2rem; /* Tamaño de fuente para los enlaces en el menú de navegación */
+    font-size: 1.2rem; 
 }
 
 nav ul li a:hover {
-    color: #ffffff; /* Cambio del color de texto a blanco al hacer hover */
+    color: #ffffff; 
 }
 
 section {
@@ -72,20 +72,20 @@ section {
 }
 
 h2 {
-    font-size: 2.2rem; /* Aumentado el tamaño de fuente para los encabezados de sección */
+    font-size: 2.2rem; 
     margin-bottom: 20px;
 }
 
 p {
     line-height: 1.6;
-    font-size: 1.2rem; /* Tamaño de fuente para los párrafos */
+    font-size: 1.2rem; 
 }
 
 /* Contact section */
 .contact-info {
     font-size: 1.2rem;
     margin-top: 10px;
-    color: #dddddd; /* Cambio del color de texto a un tono más claro */
+    color: #dddddd; 
 }
 
 .contact-info a {
@@ -95,3 +95,65 @@ p {
 .contact-info a:hover {
     color: #0056b3;
 }
+
+.skills-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; 
+    width: 80%; 
+}
+  
+.skill {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+  
+.skill i {
+    margin-right: 10px; 
+}
+
+.skill dt {
+    font-size: 1.3rem; 
+    font-weight: bold;
+}
+
+.skill dd {
+    margin-left: 10px;
+}
+ 
+.project-card {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; 
+    width: 80%; 
+}
+
+.project-card ul {
+    list-style-type: none;
+}
+
+.screenshot-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-gap: 10px; /* Gap between screenshots */
+    margin-bottom: 1rem; /* Add some space below screenshots */
+}
+  
+.screenshot {
+    width: 100%; /* Fill the container width */
+    object-fit: cover; /* Crop to fit while maintaining aspect ratio */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    opacity: 0.6;
+}
+  
+.screenshot:hover {
+    transform: scale(1.1); /* Enlarge on hover */
+    z-index: 1; /* Overlap other screenshots on hover */
+    opacity: 1;
+}
+
+  
+  
