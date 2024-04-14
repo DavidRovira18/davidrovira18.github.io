@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>David Rovira</title>
+    <meta name="description" content="Portfolio of David Rovira, showcasing web development and computer graphics projects.">
+    <meta name="keywords" content="David Rovira, portfolio, web development, computer graphics, projects">
     <link rel="stylesheet" href="/style.css">
     <script type="importmap">
         {
@@ -15,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Main -->
@@ -132,7 +135,19 @@
         <!-- Contact -->
         <section id="contact">
             <h2>Contact</h2>
-            <p>Contact me: davidroviraferrer@gmail.com</p>
+            <p><i class="fas fa-envelope" style="margin-right: 10px;"></i>Contact me via gmail: <b>davidroviraferrer@gmail.com</b></p>
+            <p>Or complete this form:</p>
+            <form action="https://formspree.io/f/mdoqpjjg" method="POST" class="contact-form">
+                <label>Your Email:</label>
+                <input type="email" name="email" placeholder="Your Email" required>
+                
+                <label>Your Message:</label>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                
+                <button type="submit" class="contact-btn">Send</button>
+            </form>
+
+            <p>Don't hesitate to connect with me via LinkedIn: <a href="https://www.linkedin.com/in/davidrovira18/" target="_blank"><i class="fab fa-linkedin" style="margin-right: 10px;"></i>Connect with me :)</a></p>
         </section>
     </div>
     <script type="module" src="https://davidrovira18.github.io/simplex-noise.js"></script>

@@ -5,11 +5,31 @@
     box-sizing: border-box;
 }
 
+:root {
+    --accent-color: #007bff;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
     color: #333;
     font-size: 16px; 
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: #0056b3;
 }
 
 canvas {
@@ -34,7 +54,6 @@ canvas {
     position: relative; 
     z-index: 1; 
     color: #ffffff;
-    font-family: 'Roboto Mono', monospace;
 }
 
 header {
@@ -164,5 +183,55 @@ p {
     opacity: 1;
 }
 
+.view-demo-btn,
+.project-card a {
+    transition: transform 0.3s ease;
+}
+
+.view-demo-btn:hover,
+.project-card a:hover {
+    transform: scale(1.1);
+
+}
+
+
+.contact-form {
+    max-width: 400px;
+    margin: 1.3rem auto;
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
   
   
