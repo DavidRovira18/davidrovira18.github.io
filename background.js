@@ -1,6 +1,4 @@
 import * as THREE from 'three';
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-// import { FlyControls } from 'three/addons/controls/FlyControls.js';
 import ChunkSystem from './chunksSystem.js';
 
 var BACKGROUND = {
@@ -44,20 +42,6 @@ var BACKGROUND = {
         //Add simplex noise to the plane
         
         //this.updateGeometry(10, 1.5, 1, 3);
-
-
-        // Set up orbit controls
-        // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-        // this.controls.enableDamping = true;
-        // this.controls.enableZoom = true;
-
-        //Set up fly controls
-        // this.controls = new FlyControls(this.camera, this.renderer.domElement);
-        // this.controls.movementSpeed = 10;
-        // this.controls.rollSpeed = 2;
-        // this.controls.dragToLook = false;
-        // this.controls.moveUp = false;
-        // this.controls.moveDown = false;
 
         //Set clock
         this.clock = new THREE.Clock();
