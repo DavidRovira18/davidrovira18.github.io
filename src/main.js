@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             else{
-                console.log("here ia m")
                 targetCard.classList.add("hidden");
                 // Show all project list
                 projectList.forEach(link => {

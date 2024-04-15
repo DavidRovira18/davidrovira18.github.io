@@ -213,6 +213,12 @@ p {
     opacity: 1;
 }
 
+#raycaster_demo {
+    position: relative;
+    width: 50%;
+    height: 50%; 
+}
+
 .view-demo-btn,
 .project-card a {
     transition: transform 0.3s ease;
